@@ -33,47 +33,41 @@ const title = (titleOfForm) => {
 }
 
 const formElement = `
-    <form id="form">
-        ${title("Create your character")}
-        ${inputElement("text", "cName", "How can we call you?")}
-        ${selectElement("select", "gender", "Gender", ["Female", "Male", "Attack Helicopter"])}
-        ${selectElement("select", "race", "Race", ["Dhampir", "Dragonborn", "Dwarf", "Elf"])}
-        ${selectElement("select", "class", "Class", ["Fighter", "Programmer", "Strider", "Wizard"])}
-        <button>Save</button>
-    </form>
+    <div id="formDiv">   
+        <form id="form">
+            ${title("Create your character")}
+            ${inputElement("text", "cName", "How can we call you?")}
+            ${selectElement("select", "gender", "Gender", ["Female", "Male", "Attack Helicopter"])}
+            ${selectElement("select", "race", "Race", ["Dhampir", "Dragonborn", "Dwarf", "Elf"])}
+            ${selectElement("select", "class", "Class", ["Fighter", "Programmer", "Strider", "Wizard"])}
+            <button>Save</button>
+        </form>
+    </div> 
 `;
 
 const sheetElement = `
-    <p>Hello 
-    <span id="inputValueContent"></span>!
-    <br>
-    Your gender is:
-    <span id="inputValueContentGender">Female</span>
-    <img id="gImg" src="https://lexiq.hu/kepek/female.png" alt=" " width="60" height="60">
-    <br>
-    Your race:
-    <span id="inputValueContentRace">Dhampir</span>
-    <img id="rImg" src="https://images.squarespace-cdn.com/content/v1/5e3843beb37a0716cf512998/1618937697187-4SDCGSOWQK354XIYBO9P/dhampir.png" alt=" " width="60" height="60">
-    <br>
-    Your class:
-    <span id="inputValueContentClass">Fighter</span>
-    <img id="cImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjlR5nVllPfQUR3M_AFT0x0JC02jPSG0Bhg&usqp=CAU" alt=" " width="60" height="60">
-    </p>
+    <div id="sheet">
+        <p>Hello 
+            <span id="inputValueContent"></span>!
+            <br>
+            Your gender is:
+            <span id="inputValueContentGender">Female</span>
+            <img id="gImg" src="https://lexiq.hu/kepek/female.png" alt=" " width="60" height="60">
+            <br>
+            Your race:
+            <span id="inputValueContentRace">Dhampir</span>
+            <img id="rImg" src="https://images.squarespace-cdn.com/content/v1/5e3843beb37a0716cf512998/1618937697187-4SDCGSOWQK354XIYBO9P/dhampir.png" alt=" " width="60" height="60">
+            <br>
+            Your class:
+            <span id="inputValueContentClass">Fighter</span>
+            <img id="cImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjlR5nVllPfQUR3M_AFT0x0JC02jPSG0Bhg&usqp=CAU" alt=" " width="60" height="60">
+        </p>
+    </div>    
 `;
 
 const inputEvent = (event) => {
     document.getElementById("inputValueContent").innerHTML = event.target.value;
 }
-
-const dhampirUrl = "";
-const dragonbornUrl = "";
-const dwarfUrl = "";
-const elfUrl = "";
-
-const fighterUrl = "";
-const programmerUrl = "";
-const striderUrl = "";
-const wizardUrl = "";
 
 const selectEvent = (event) => {
     // console.log(event.target.name);
@@ -86,6 +80,26 @@ const selectEvent = (event) => {
             document.getElementById("inputValueContentRace").innerHTML = document.getElementById("race").value;
             document.getElementById("inputValueContentClass").innerHTML = document.getElementById("class").value;
 
+            if (document.getElementById("race").value = "Dhampir") {
+                document.getElementById("rImg").src = "https://images.squarespace-cdn.com/content/v1/5e3843beb37a0716cf512998/1618937697187-4SDCGSOWQK354XIYBO9P/dhampir.png"
+            } else if (document.getElementById("race").value = "Dragonborn") {
+                document.getElementById("rImg").src = "https://cdn.shopify.com/s/files/1/0097/7810/2350/products/db01_cbf11502-48e2-473d-ae50-c7b477f60650_300x.png?v=1615259206";
+            } else if (document.getElementById("race").value = "Dwarf") {
+                document.getElementById("rImg").src = "https://assets.3dtotal.com/gimli-final-maincam.5ddkbc.expanded.hpu.jpg";
+            } else {
+                document.getElementById("rImg").src = "https://image.shutterstock.com/image-vector/little-elf-vector-illustration-on-260nw-731890309.jpg";
+            }
+
+            if (document.getElementById("class").value = "Fighter") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjlR5nVllPfQUR3M_AFT0x0JC02jPSG0Bhg&usqp=CAU"
+            } else if (document.getElementById("race").value = "Programmer") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTVgANWFNZitlXr8ANBBXM0raIn0kV8KFl4g&usqp=CAU";
+            } else if (document.getElementById("race").value = "Strider") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROPqicDpJFRvkYnEJCnRZzX976MIyUjeSROw&usqp=CAU";
+            } else {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9UTleJ2eXbzsGkUF2fgy-uLRu0CvDykW5PQ&usqp=CAU";
+            }
+
             // console.log("I work");
             document.getElementById("gImg").src = "https://lexiq.hu/kepek/female.png";
         } else if (event.target.value === "Male") {
@@ -94,6 +108,26 @@ const selectEvent = (event) => {
 
             document.getElementById("inputValueContentRace").innerHTML = document.getElementById("race").value;
             document.getElementById("inputValueContentClass").innerHTML = document.getElementById("class").value;
+
+            if (document.getElementById("race").value = "Dhampir") {
+                document.getElementById("rImg").src = "https://images.squarespace-cdn.com/content/v1/5e3843beb37a0716cf512998/1618937697187-4SDCGSOWQK354XIYBO9P/dhampir.png"
+            } else if (document.getElementById("race").value = "Dragonborn") {
+                document.getElementById("rImg").src = "https://cdn.shopify.com/s/files/1/0097/7810/2350/products/db01_cbf11502-48e2-473d-ae50-c7b477f60650_300x.png?v=1615259206";
+            } else if (document.getElementById("race").value = "Dwarf") {
+                document.getElementById("rImg").src = "https://assets.3dtotal.com/gimli-final-maincam.5ddkbc.expanded.hpu.jpg";
+            } else {
+                document.getElementById("rImg").src = "https://image.shutterstock.com/image-vector/little-elf-vector-illustration-on-260nw-731890309.jpg";
+            }
+
+            if (document.getElementById("class").value = "Fighter") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgjlR5nVllPfQUR3M_AFT0x0JC02jPSG0Bhg&usqp=CAU"
+            } else if (document.getElementById("race").value = "Programmer") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTVgANWFNZitlXr8ANBBXM0raIn0kV8KFl4g&usqp=CAU";
+            } else if (document.getElementById("race").value = "Strider") {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROPqicDpJFRvkYnEJCnRZzX976MIyUjeSROw&usqp=CAU";
+            } else {
+                document.getElementById("cImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9UTleJ2eXbzsGkUF2fgy-uLRu0CvDykW5PQ&usqp=CAU";
+            }
 
             document.getElementById("gImg").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Male-s%C3%ADmbolo2.svg/1200px-Male-s%C3%ADmbolo2.svg.png";
         } else {

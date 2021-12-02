@@ -1,3 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+  
+    background: transparent;
+  
+    font-family: inherit;
+    
+    text-decoration: none;
+  }
+  
+  ol, ul, li {
+    list-style:none;
+    display:block;
+  }
+  
+  table {
+    border-collapse:collapse;
+    border-spacing:0
+  }
+  
+  a img {
+    border: none
+  }
+  
+  button, a {
+    cursor: pointer;
+    color: inherit
+  }
+  
+  textarea {
+    resize: none
+  }
+  
+  /* button, input, textarea, select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border-radius: 0
+  }
+
+/* end of css reset */
+
+body {
+    background-color: chocolate;
+}
+
+#formDiv {
+    display: inline-block;
+    width: 40%;
+    height: 300px;
+    margin-left: 9%;
+}
+
+#sheet {
+    display: inline-block;
+    width: 40%;
+    height: 300px;
+    margin-right: 9%;
+}
+
+select, button, input {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+input {
+    background-color: white;
+    margin-bottom: 30px;
+    height: 28px;
+    margin-left: 5px;
+    padding: 3px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: crimson;
+}
+
+select {
+    margin-bottom: 30px;
+    background-color: darkgreen;
+    color: antiquewhite;
+    height: 25px;
+}
+
+h2 {
+    font-size: 20px;
+    width: 200%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 img {
     object-fit: contain;
+}
+
+select:disabled {
+    opacity: 0.5;
 }
